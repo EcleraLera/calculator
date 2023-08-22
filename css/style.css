@@ -66,13 +66,11 @@ h3 {
 }
 
 .result {
-
+    display: flex;
+    flex-direction: row;
 }
 
 .result-field {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     background-color: #1a2239;
     height: 100px;
     width: 400px;
@@ -81,24 +79,38 @@ h3 {
 
 .buttons {
     background-color: #29334e;
-    height: 300px;
-    width: 400px;
+    height: 310px;
+    width: 365px;
     border-radius: 10px;
+    padding: 10px;
 }
 
-.btn {
-    display: inline-block;
-    /* display: flex;
-    flex-wrap: wrap;
-    flex-direction: row; */
+.buttons-position {
+    display: flex;
+    flex-flow: row wrap;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    justify-content: center;
+    row-gap: 8px;
+    column-gap: 8px;
+
 }
+
+button {
+    border: 0;
+}
+
+/* .btn {
+    margin-top: 10px;
+    margin-bottom: 10;
+} */
 
 .buttons__button {
-    margin-left: 5px;
-    margin-right: 5px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
     background: #eee7e1;
     height: 40px;
-    width: 80px;
+    width: 70px;
     border-radius: 5px;
     font-weight: 700;
     font-family: 'Mulish', sans-serif;
@@ -106,11 +118,11 @@ h3 {
 }
 
 .buttons__button-del {
-    margin-left: 5px;
-    margin-right: 5px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
     background: #6f7da2;
     height: 40px;
-    width: 80px;
+    width: 70px;
     border-radius: 5px;
     font-weight: 700;
     font-family: 'Mulish', sans-serif;
@@ -118,26 +130,26 @@ h3 {
 }
 
 .buttons__button-reset {
-    margin-left: 5px;
-    margin-right: 5px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
     background: #6f7da2;
     height: 40px;
-    width: 180px;
+    width: 160px;
     border-radius: 5px;
     font-weight: 700;
     font-family: 'Mulish', sans-serif;
-    
     box-shadow: 0px 3px 0px 0px rgba(74, 89, 121)
 }
 
 .buttons__button-equal-sign {
-    margin-left: 5px;
-    margin-right: 5px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
     background: #d74837;
     height: 40px;
-    width: 180px;
+    width: 160px;
     border-radius: 5px;
     font-weight: 700;
     font-family: 'Mulish', sans-serif;
-    box-shadow: 0px 3px 0px 0px rgba(153, 43, 36)
+    box-shadow: 0px 3px 0px 0px rgba(153, 43, 36);
+
 }
