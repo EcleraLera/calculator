@@ -47,6 +47,7 @@ h3 {
 .switch {
     position: relative;
 }
+
 .switch_rectangle-blue {
     position: absolute;
     background: #2a334a;    
@@ -73,27 +74,39 @@ h3 {
 .result-field {
     background-color: #1a2239;
     height: 100px;
-    width: 400px;
+    width: 365px;
     border-radius: 10px;
 }
 
-.buttons {
+.bb {
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 10px;
+    padding-top: 10px;
+}
+
+.button-block {
+    background-color: #29334e;
+    height: 310px;
+    width: 365px;
+    border-radius: 10px;
+    /* padding: 10px; */
+}
+
+/* .buttons {
     background-color: #29334e;
     height: 310px;
     width: 365px;
     border-radius: 10px;
     padding: 10px;
-}
+} */
 
 .buttons-position {
     display: flex;
-    flex-flow: row wrap;
-    /* flex-direction: row;
-    flex-wrap: wrap; */
-    justify-content: center;
-    row-gap: 8px;
-    column-gap: 8px;
-
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* row-gap: 8px;
+    column-gap: 8px; */
 }
 
 button {
@@ -151,5 +164,4 @@ button {
     font-weight: 700;
     font-family: 'Mulish', sans-serif;
     box-shadow: 0px 3px 0px 0px rgba(153, 43, 36);
-
 }
