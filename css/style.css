@@ -5,7 +5,7 @@ body {
     height: 100%;
 }
 
-.body {
+.container {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -13,14 +13,16 @@ body {
     row-gap: 15px;
 }
 
-.container {
+.calculator__header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .header {
-    width: 365px;
+    width: 320px;
     height: 30px;
     color:#fefeff;
 }
@@ -32,144 +34,124 @@ body {
 }
 
 h1 {
-    font-size: 22px;
+    padding-left: 5px;
+    font-size: 15px;
     font-weight: 800;
-    font-family: 'Mulish', sans-serif;
+    font-family: 'League Spartan', sans-serif;
 }
 
 h2 {
-    font-size: 13px;
+    font-size: 7px;
     margin-right: 10px;
     font-weight: 700;
-    font-family: 'Mulish', sans-serif;
+    font-family: 'League Spartan', sans-serif;
 }
 
 h3 {
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 700;
-    font-family: 'Mulish', sans-serif;
+    font-family: 'League Spartan', sans-serif;
 }
 
-/* .switch {
+.header__switch {
     position: relative;
+    margin-right: 20px;
 }
 
-.switch_rectangle-blue {
+.switch_blue {
     position: absolute;
     background: #2a334a;    
-    width: 30px;
-    height: 10px;
+    width: 40px;
+    height: 15px;
     border-radius: 100px;
     z-index: 2;
 }
 
-.switch_point-red {
+.switch_red {
     position: absolute;   
     background: #d74837;
     width: 8px;
     height: 8px;
     border-radius: 100px;
+    margin-left: 4px;
+    margin-top: 4px;
     z-index: 3;
-} */
+}
 
 .result {
     display: flex;
     flex-direction: row;
+    margin-bottom: 15px;
 }
 
-.result-block {
+.calculator__result {
     background-color: #1a2239;
-    height: 100px;
-    width: 365px;
-    border-radius: 10px;
+    height: 75px;
+    width: 320px;
+    border-radius: 8px;
 }
 
-.bb {
+.buttons {
     display: flex;
     flex-flow: column wrap;
-    /* row-gap: 10px;
-    padding-top: 10px;
-     */
     justify-content: space-evenly;
 }
 
-.button-block {
+.calculator__buttons {
     background-color: #29334e;
-    height: 310px;
-    width: 365px;
-    border-radius: 10px;
-    /* padding: 10px; */
+    height: 285px;
+    width: 320px;
+    border-radius: 9px;
 }
 
-/* .buttons {
-    background-color: #29334e;
-    height: 310px;
-    width: 365px;
-    border-radius: 10px;
-    padding: 10px;
-} */
-
-.buttons-position {
+.buttons__row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    /* row-gap: 8px;
-    column-gap: 8px; */
 }
 
 button {
     border: 0;
 }
 
-/* .btn {
-    margin-top: 10px;
-    margin-bottom: 10;
-} */
-
-.buttons__button {
-    /* margin-left: 5px;
-    margin-right: 5px; */
-    background: #eee7e1;
-    height: 40px;
-    width: 70px;
+.button {
     border-radius: 5px;
-    font-weight: 700;
-    font-family: 'Mulish', sans-serif;
+    font-weight: 800;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.button_white {
+    background: #eee7e1;
+    color:#29334e;
+    height: 35px;
+    width: 60px;
+    font-size: 22px;
     box-shadow: 0px 3px 0px 0px rgba(187, 182, 188)
 }
 
-.buttons__button-del {
-    /* margin-left: 5px;
-    margin-right: 5px; */
+.button_blue {
     background: #6f7da2;
-    height: 40px;
-    width: 70px;
-    border-radius: 5px;
-    font-weight: 700;
-    font-family: 'Mulish', sans-serif;
+    color: #fefeff;
+    height: 35px;
+    width: 60px;
+    font-size: 15px;
     box-shadow: 0px 3px 0px 0px rgba(74, 89, 121)
 }
 
-.buttons__button-reset {
-    /* margin-left: 5px;
-    margin-right: 5px; */
+.button_long {
     background: #6f7da2;
-    height: 40px;
-    width: 160px;
-    border-radius: 5px;
-    font-weight: 700;
-    font-family: 'Mulish', sans-serif;
+    color: #fefeff;
+    height: 35px;
+    width: 135px;
+    font-size: 15px;
     box-shadow: 0px 3px 0px 0px rgba(74, 89, 121)
 }
 
-.buttons__button-equal-sign {
-    /* margin-left: 5px;
-    margin-right: 5px; */
+.button_red {
     background: #d74837;
-    height: 40px;
-    width: 160px;
-    border-radius: 5px;
-    font-weight: 700;
-    font-family: 'Mulish', sans-serif;
+    color: #fefeff;
+    height: 35px;
+    width: 135px;
+    font-size: 15px;
     box-shadow: 0px 3px 0px 0px rgba(153, 43, 36);
 }

@@ -9,56 +9,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@600;700;800&family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Mulish:wght@600;700;800&family=Quicksand:wght@600&display=swap" rel="stylesheet">
     <title>Калькулятор</title>
     <meta name="description" content="Лучший калькулятор">
 </head>
 <body>
-    <div class="body">
-        <div class="container header">            
-            <h1>calc</h1>
-            <div class="theme">
-                <h2>THEME</h2>
-                <div class="switch">
-                    <h3>1 2 3</h3>                    
-                    <div class="switch_rectangle-blue"></div>
-                    <div class="switch_point-red"></div>
+    <div class="container">
+        <div class="calculator">
+            <div class="calculator__header header">            
+                <h1>calc</h1>
+                <div class="theme">
+                    <h2>THEME</h2>
+                    <div class="header__switch switch">
+                        <h3>1 2 3</h3>                    
+                        <div class="switch_blue"></div>
+                        <div class="switch_red"></div>
+                    </div>
+                </div>    
+            </div>
+            <!-- поле результата -->
+            <div class="calculator__result result">
+            </div> 
+            <!-- копки -->
+            <div class="calculator__buttons buttons">
+                <div class="buttons__row">
+                    <button class="button button_white">7</button>
+                    <button class="button button_white">8</button>
+                    <button class="button button_white">9</button>
+                    <button class="button button_blue">DEL</button>
                 </div>
-            </div>    
+                <div class="buttons__row">
+                    <button class="button button_white">4</button>
+                    <button class="button button_white">5</button>
+                    <button class="button button_white">6</button>
+                    <button class="button button_white">+</button>
+                </div>
+                <div class="buttons__row">
+                    <button class="button button_white">1</button>
+                    <button class="button button_white">2</button>
+                    <button class="button button_white">3</button>
+                    <button class="button button_white">-</button>
+                </div>
+                <div class="buttons__row">
+                    <button class="button button_white">.</button>
+                    <button class="button button_white">0</button>
+                    <button class="button button_white">/</button>
+                    <button class="button button_white">x</button>
+                </div>
+                <div class="buttons__row">
+                    <button class="button button_long">RESET</button>
+                    <button class="button button_red">=</button>
+                </div>
+            </div> 
         </div>
-        <!-- поле результата -->
-        <div class="result-block result">
-        </div> 
-        <!-- копки -->
-        <div class="button-block bb ">
-            <div class="buttons buttons-position ">
-                <button class="buttons__button btn">8</button>
-                <button class="buttons__button btn">7</button>
-                <button class="buttons__button btn">9</button>
-                <button class="buttons__button-del btn">DEL</button>
-            </div>
-            <div class="buttons buttons-position">
-                <button class="buttons__button btn">4</button>
-                <button class="buttons__button btn">5</button>
-                <button class="buttons__button btn">6</button>
-                <button class="buttons__button btn">+</button>
-            </div>
-            <div class="buttons buttons-position">
-                <button class="buttons__button btn">1</button>
-                <button class="buttons__button btn">2</button>
-                <button class="buttons__button btn">3</button>
-                <button class="buttons__button btn">-</button>
-            </div>
-            <div class="buttons buttons-position">
-                <button class="buttons__button btn">.</button>
-                <button class="buttons__button btn">0</button>
-                <button class="buttons__button btn">/</button>
-                <button class="buttons__button btn">x</button>
-            </div>
-            <div class="buttons buttons-position">
-                <button class="buttons__button-reset btn">RESET</button>
-                <button class="buttons__button-equal-sign btn">=</button>
-            </div>
-        </div> 
     </div>
 </body>
 </html>
