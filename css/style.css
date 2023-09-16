@@ -18,11 +18,11 @@ body {
     flex-flow: row nowrap;
     justify-content: space-between;
     margin-top: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
 }
 
 .header {
-    width: 320px;
+    width: 480px;
     height: 30px;
     color:#fefeff;
 }
@@ -35,20 +35,20 @@ body {
 
 h1 {
     padding-left: 5px;
-    font-size: 15px;
+    font-size: 28px;
     font-weight: 800;
     font-family: 'League Spartan', sans-serif;
 }
 
 h2 {
-    font-size: 7px;
+    font-size: 12px;
     margin-right: 10px;
     font-weight: 700;
     font-family: 'League Spartan', sans-serif;
 }
 
 h3 {
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 700;
     font-family: 'League Spartan', sans-serif;
 }
@@ -58,7 +58,7 @@ h3 {
     margin-right: 20px;
 }
 
-.switch_blue {
+/* .switch_blue {
     position: absolute;
     background: #2a334a;    
     width: 40px;
@@ -76,18 +76,18 @@ h3 {
     margin-left: 4px;
     margin-top: 4px;
     z-index: 3;
-}
+} */
 
 .result {
     display: flex;
     flex-direction: row;
-    margin-bottom: 15px;
+    margin-bottom: 21px;
 }
 
 .calculator__result {
     background-color: #1a2239;
-    height: 75px;
-    width: 320px;
+    height: 114px;
+    width: 480px;
     border-radius: 8px;
 }
 
@@ -99,8 +99,8 @@ h3 {
 
 .calculator__buttons {
     background-color: #29334e;
-    height: 285px;
-    width: 320px;
+    height: 427px;
+    width: 480px;
     border-radius: 9px;
 }
 
@@ -115,7 +115,7 @@ button {
 }
 
 .button {
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: 800;
     font-family: 'League Spartan', sans-serif;
 }
@@ -123,35 +123,35 @@ button {
 .button_white {
     background: #eee7e1;
     color:#29334e;
-    height: 35px;
-    width: 60px;
-    font-size: 22px;
+    height: 54px;
+    width: 90px;
+    font-size: 35px;
     box-shadow: 0px 3px 0px 0px rgba(187, 182, 188)
 }
 
 .button_blue {
     background: #6f7da2;
     color: #fefeff;
-    height: 35px;
-    width: 60px;
-    font-size: 15px;
+    height: 54px;
+    width: 90px;
+    font-size: 25px;
     box-shadow: 0px 3px 0px 0px rgba(74, 89, 121)
 }
 
 .button_long {
     background: #6f7da2;
     color: #fefeff;
-    height: 35px;
-    width: 135px;
-    font-size: 15px;
+    height: 54px;
+    width: 202px;
+    font-size: 25px;
     box-shadow: 0px 3px 0px 0px rgba(74, 89, 121)
 }
 
 .button_red {
     background: #d74837;
     color: #fefeff;
-    height: 35px;
-    width: 135px;
-    font-size: 15px;
+    height: 54px;
+    width: 202px;
+    font-size: 25px;
     box-shadow: 0px 3px 0px 0px rgba(153, 43, 36);
 }
