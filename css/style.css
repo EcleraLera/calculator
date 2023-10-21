@@ -41,7 +41,9 @@ body {
     font-weight: 700;
     font-family: 'League Spartan', sans-serif;
 }
-
+.theme__number {
+    display: flex;
+}
 .radio-button {
     display: flex;
 }
@@ -50,20 +52,22 @@ label[for="theme1"]:nth-of-type(1) {
     background-color: #29334e;
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
-    width: 15px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
 }
-/* label[for="theme1"]:nth-of-type(2) {
+
+label[for="theme2"]:nth-of-type(2) {
     background-color: #29334e;
-    width: 15px;
-    height: 12px;
-} */
+    width: 10px;
+    height: 10px;
+}
+
 label[for="theme3"]:nth-of-type(3) {
     background-color: #29334e;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-    width: 15px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
 }
 
 input[type="radio"] {
@@ -81,12 +85,14 @@ input[type="radio"] + label {
 input[type="radio"] + label:before {
     content: '';
     position: absolute;
-    top: 18px;
     left: 0;
     width: 8px;
     height: 8px;
-    background: #d74837;
     border-radius: 50%;
+}
+
+input[type="radio"]:checked + label {
+    background: #d74837;
 }
 
 h1 {
