@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 .calculator {
     width: 480px;
 }
@@ -30,20 +33,31 @@ body {
     color:#fefeff;
 }
 
-.theme {
+.header__theme {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
-.theme__number {
-    padding-left: 5px;
+
+.switch {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.switch__number {
     font-size: 10px;
     font-weight: 700;
     font-family: 'League Spartan', sans-serif;
 }
-.theme__number {
+
+.switch__number {
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 14px;
 }
+
 .radio-button {
     display: flex;
 }
@@ -52,22 +66,22 @@ label[for="theme1"]:nth-of-type(1) {
     background-color: #29334e;
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
-    width: 10px;
-    height: 10px;
+    width: 21px;
+    height: 23px;
 }
 
 label[for="theme2"]:nth-of-type(2) {
     background-color: #29334e;
-    width: 10px;
-    height: 10px;
+    width: 21px;
+    height: 23px;
 }
 
 label[for="theme3"]:nth-of-type(3) {
     background-color: #29334e;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-    width: 10px;
-    height: 10px;
+    width: 21px;
+    height: 23px;
 }
 
 input[type="radio"] {
@@ -82,21 +96,18 @@ input[type="radio"] + label {
     line-height: 30px;
 }
 
-input[type="radio"] + label:before {
+input[type="radio"]:checked + label:before {
     content: '';
     position: absolute;
     left: 0;
-    width: 8px;
-    height: 8px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-}
-
-input[type="radio"]:checked + label {
     background: #d74837;
 }
 
 h1 {
-    padding-left: 5px;
+    padding-left: 6px;
     font-size: 28px;
     font-weight: 800;
     font-family: 'League Spartan', sans-serif;
@@ -161,16 +172,35 @@ h3 {
     box-shadow: 0px 3px 0px 0px rgba(187, 182, 188)
 }
 
+.button_white:hover {
+    border-color: aliceblue;
+    box-shadow: 0px 0px 25px aliceblue;
+    color: #d67bb5;
+}
+
 .button_blue {
     background: #6f7da2;
     color: #fefeff;
     font-size: 25px;
     box-shadow: 0px 3px 0px 0px rgba(74, 89, 121)
 }
+
+.button_blue:hover {
+    border-color: #6a8fea;
+    box-shadow: 0px 0px 25px #6a8fea;
+    color: #d67bb5;
+}
+
 .button_red {
     background: #d74837;
     color: #fefeff;
     box-shadow: 0px 3px 0px 0px rgba(153, 43, 36);
+}
+
+.button_red:hover {
+    border-color:#d74837;
+    box-shadow: 0px 0px 25px #d74837;
+    color: #d67bb5;
 }
 
 .button_short {
