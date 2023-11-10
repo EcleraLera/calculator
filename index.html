@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- <link href="dark-theme.css" rel="stylesheet" id="theme_1">
+    <link href="light-theme.css" rel="stylesheet" id="theme_2">
+    <link href="pink-theme.css" rel="stylesheet" id="theme_3"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@600;700;800&family=Quicksand:wght@600&display=swap" rel="stylesheet">
@@ -33,40 +36,41 @@
                 </div>    
             </div>
             <!-- поле результата -->
-            <div class="calculator__result result item">
-                <form name="form">
-                    <input type="text" name="textview" readonly>
-                </form>
+            <div class="calculator__result result item" id="rezult">
+                <!-- <form name="form">
+                    <input type="text" name="textview" id="textview" readonly>
+                </form> -->
             </div> 
+            <div id="archiv"></div>
             <!-- копки -->
             <div class="calculator__buttons buttons">
                 <div class="buttons__row">
-                    <button class="button button_white button_short" onclick="insert('7')">7</button>
-                    <button class="button button_white button_short" onclick="insert('8')">8</button>
-                    <button class="button button_white button_short" onclick="insert('9')">9</button>
-                    <button class="button button_blue button_short" onclick="del()">DEL</button>
+                    <button class="button button_white button_short">7</button>
+                    <button class="button button_white button_short">8</button>
+                    <button class="button button_white button_short">9</button>
+                    <button class="button button_blue button_short">DEL</button>
                 </div>
                 <div class="buttons__row">
-                    <button class="button button_white button_short" onclick="insert('4')">4</button>
-                    <button class="button button_white button_short" onclick="insert('5')">5</button>
-                    <button class="button button_white button_short" onclick="insert('6')">6</button>
-                    <button class="button button_white button_short" onclick="insert('+')">+</button>
+                    <button class="button button_white button_short">4</button>
+                    <button class="button button_white button_short">5</button>
+                    <button class="button button_white button_short">6</button>
+                    <button class="button button_white button_short">+</button>
                 </div>
                 <div class="buttons__row">
-                    <button class="button button_white button_short" onclick="insert('1')">1</button>
-                    <button class="button button_white button_short" onclick="insert('2')">2</button>
-                    <button class="button button_white button_short" onclick="insert('3')">3</button>
-                    <button class="button button_white button_short" onclick="insert('-')">-</button>
+                    <button class="button button_white button_short">1</button>
+                    <button class="button button_white button_short">2</button>
+                    <button class="button button_white button_short">3</button>
+                    <button class="button button_white button_short">-</button>
                 </div>
                 <div class="buttons__row">
-                    <button class="button button_white button_short" onclick="insert('.')">.</button>
-                    <button class="button button_white button_short" onclick="insert('0')">0</button>
-                    <button class="button button_white button_short" onclick="insert('/')">/</button>
-                    <button class="button button_white button_short" onclick="insert('*')">x</button>
+                    <button class="button button_white button_short">.</button>
+                    <button class="button button_white button_short">0</button>
+                    <button class="button button_white button_short">/</button>
+                    <button class="button button_white button_short">x</button>
                 </div>
                 <div class="buttons__row">
-                    <button class="button button_blue button_long" onclick="reset()">RESET</button>
-                    <button class="button button_red button_long" onclick="equal()">=</button>
+                    <button class="button button_blue button_long">RESET</button>
+                    <button class="button button_red button_long ">=</button>
                 </div>
             </div> 
         </div>
