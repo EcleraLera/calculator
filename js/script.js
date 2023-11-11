@@ -4,10 +4,11 @@ let operator = '';
 let buttons = document.querySelectorAll("button");
  
 function remember(event) {
-    // console.log( typeof event.target.innerText)
     let target = event.target.innerText;
     if (target === 'RESET') {
         firstNumber = '';
+        secondNumber = '';
+        operator = '';
     } else if (target === '.') {
         firstNumber += target;
     } else if (target === '+' || target === '-' || target === '/' || target === '*' ) {
@@ -21,7 +22,7 @@ function remember(event) {
             secondNumber.length <= 12; 
         } else {
             firstNumber += target;
-            secondNumber.length <= 12; 
+            firstNumber.length <= 12; 
         }
     }
    
@@ -34,7 +35,7 @@ function remember(event) {
  Array.from(buttons).forEach(button => {
     button.addEventListener("click", remember)
     }
- )
+ );
 
 function update(event) {
     let target = event.target.innerText;
@@ -46,12 +47,27 @@ function update(event) {
 Array.from(buttons).forEach(button => {
     button.addEventListener("click", update)
     }
- )
+ );
  
  function calculate() {
-
-
+    let rezult = '';
+    let num1 = parseFloat(firstNumber);
+    let num2 = parseFloat(secondNumber);
+    if (operator = '-') {
+        rezult = num1 - num2;
+    }
+    if (operator = '+') {
+        rezult = num1 + num2;
+    }
+    if (operator = '*') {
+        rezult = num1 * num2;
+    }
+    if (operator = '/') {
+        rezult = num1 / num2;
+    }
+    console.log(rezult);
  }
- 
- button.addEventListener('click', calculate)
+
+let el = document.getElementById('button_red');
+el.addEventListener('click', calculate);
 
