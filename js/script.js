@@ -1,73 +1,90 @@
 let firstNumber = '';
 let secondNumber = '';
-let operator = '';
+let sign = '';
+
 let buttons = document.querySelectorAll("button");
+
+let resultField = document.getElementById('result');
+
+Array.from(buttons).forEach(button => {
+    button.addEventListener("click", handler)
+    }
+);
+
+function reset() {
+    firstNumber = '';
+    secondNumber = '';
+    sign = '';
+}
+
+function update() {
+    resultField.innerHtml = '';
+}
+
+function calculate() {
+    let result = '';
+    let num1 = parseFloat(firstNumber);
+    let num2 = parseFloat(secondNumber);
+    if (sign = '-') {
+        result = num1 - num2;
+    }
+    if (sign = '+') {
+        result = num1 + num2;
+    }
+    if (sign = '*') {
+        result = num1 * num2;
+    }
+    if (sign = '/') {
+        result = num1 / num2;
+    }
+    console.log(result);
+}
+
+function remember() {
+    if (sign != '') {
+        secondNumber += target;
+        secondNumber.length <= 12; 
+    } else {
+        firstNumber += target;
+        firstNumber.length <= 12; 
+    }
+}
+
+function del() { 
+    firstNumber = firstNumber.slice(0, -1);
+}
+
+function operator() {
+    sign += target;
+}
  
-function remember(event) {
-    let target = event.target.innerText;
+function handler(event) {
+    let target = event.target.innerText; 
     if (target === 'RESET') {
-        firstNumber = '';
-        secondNumber = '';
-        operator = '';
+        reset();
+        update();
+    } else if (target === '=') {
+        calculate();
     } else if (target === '.') {
         firstNumber += target;
     } else if (target === '+' || target === '-' || target === '/' || target === '*' ) {
-        operator += target;
-        operator.length = 1;
-    } else if (target === 'DEL') {
-        firstNumber = firstNumber.slice(0, -1);
+        sign();
+        update();
+    } else if (target === 'DEL') { 
+        del();
     } else { 
-        if (operator != '') {
-            secondNumber += target;
-            secondNumber.length <= 12; 
-        } else {
-            firstNumber += target;
-            firstNumber.length <= 12; 
-        }
+        remember(); 
     }
    
     console.log(firstNumber);
-    console.log(operator);
+    console.log(sign);
     console.log(secondNumber);
 
 }
 
- Array.from(buttons).forEach(button => {
-    button.addEventListener("click", remember)
-    }
- );
 
-function update(event) {
-    let target = event.target.innerText;
-    if (target === '+' || target === '-' || target === '/' || target === '*' || target === '=' || target === 'RESET') {
-        document.getElementById('rezult').innerHtml = '';
-    }
-}
 
-Array.from(buttons).forEach(button => {
-    button.addEventListener("click", update)
-    }
- );
- 
- function calculate() {
-    let rezult = '';
-    let num1 = parseFloat(firstNumber);
-    let num2 = parseFloat(secondNumber);
-    if (operator = '-') {
-        rezult = num1 - num2;
-    }
-    if (operator = '+') {
-        rezult = num1 + num2;
-    }
-    if (operator = '*') {
-        rezult = num1 * num2;
-    }
-    if (operator = '/') {
-        rezult = num1 / num2;
-    }
-    console.log(rezult);
- }
 
-let el = document.getElementById('button_red');
-el.addEventListener('click', calculate);
+
+
 
