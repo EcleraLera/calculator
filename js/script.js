@@ -2,7 +2,7 @@ let firstNumber = '';
 let secondNumber = '';
 let sign = '';
 
-let buttons = document.querySelectorAll("button");
+let buttons = document.querySelectorAll('button');
 
 let resultField = document.getElementById('result');
 
@@ -25,62 +25,79 @@ function calculate() {
     let result = '';
     let num1 = parseFloat(firstNumber);
     let num2 = parseFloat(secondNumber);
-    if (sign = '-') {
+    if (sign === '-') {
         result = num1 - num2;
     }
-    if (sign = '+') {
+    if (sign === '+') {
         result = num1 + num2;
     }
-    if (sign = '*') {
+    if (sign === 'x') {
         result = num1 * num2;
     }
-    if (sign = '/') {
+    if (sign === '/') {
         result = num1 / num2;
     }
     console.log(result);
 }
 
-function remember() {
-    if (sign != '') {
-        secondNumber += target;
-        secondNumber.length <= 12; 
+function remember(tar) {
+    if (sign !== '') {
+        secondNumber += tar;
+        secondNumber = secondNumber.slice(0,10); 
     } else {
-        firstNumber += target;
-        firstNumber.length <= 12; 
+        firstNumber += tar;
+        firstNumber = firstNumber.slice(0,10);
     }
 }
 
 function del() { 
-    firstNumber = firstNumber.slice(0, -1);
+    if (operator !== '' ) {
+        secondNumber = '';
+    } else if (operator === '' ) {
+        firstNumber = '';
+    } 
 }
 
-function operator() {
-    sign += target;
+function operator(tar) {
+    sign += tar;
+    if (sign.length > 1) {
+        sign = sign.slice(0,1);
+    } 
 }
- 
-function handler(event) {
-    let target = event.target.innerText; 
+
+function point(tar) {
+    if (operator !== '') {
+        secondNumber += tar;
+    } else {
+        firstNumber += tar;
+    } 
+}
+
+function handler(event) { 
+    let target = event.target.innerText;
     if (target === 'RESET') {
         reset();
         update();
     } else if (target === '=') {
         calculate();
+        reset();
     } else if (target === '.') {
-        firstNumber += target;
-    } else if (target === '+' || target === '-' || target === '/' || target === '*' ) {
-        sign();
+        point(target);
+    } else if (target === '+' || target === '-' || target === '/' || target === 'x' ) {
+        operator(target);
         update();
     } else if (target === 'DEL') { 
         del();
     } else { 
-        remember(); 
+        remember(target); 
     }
-   
+
     console.log(firstNumber);
     console.log(sign);
     console.log(secondNumber);
-
 }
+
+
 
 
 
