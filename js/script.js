@@ -51,9 +51,9 @@ function remember(tar) {
 }
 
 function del() { 
-    if (operator !== '' ) {
+    if (sign !== '' ) {
         secondNumber = '';
-    } else if (operator === '' ) {
+    } else {
         firstNumber = '';
     } 
 }
@@ -66,11 +66,11 @@ function operator(tar) {
 }
 
 function point(tar) {
-    if (operator !== '') {
-        secondNumber += tar;
-    } else {
-        firstNumber += tar;
-    } 
+    if (sign !== '') {
+        secondNumber.includes('.') ? secondNumber : secondNumber += tar;
+    } else if (sign == '') {
+        firstNumber.includes('.') ? firstNumber : firstNumber += tar;
+    }
 }
 
 function handler(event) { 
@@ -84,7 +84,11 @@ function handler(event) {
     } else if (target === '.') {
         point(target);
     } else if (target === '+' || target === '-' || target === '/' || target === 'x' ) {
-        operator(target);
+        if (firstNumber !== '')  {
+            operator(target);
+        } else { 
+            alert('Введите первое число') 
+        }
         update();
     } else if (target === 'DEL') { 
         del();
