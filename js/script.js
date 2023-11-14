@@ -1,6 +1,7 @@
 let firstNumber = '';
 let secondNumber = '';
 let sign = '';
+let input = document.getElementById('textview');
 
 let buttons = document.querySelectorAll('button');
 
@@ -15,6 +16,7 @@ function reset() {
     firstNumber = '';
     secondNumber = '';
     sign = '';
+    input.value = '0';
 }
 
 function update() {
@@ -37,6 +39,8 @@ function calculate() {
     if (sign === '/') {
         result = num1 / num2;
     }
+    input.value = result;
+    input.value = input.value.slice(0,5);
     console.log(result);
 }
 
@@ -44,9 +48,11 @@ function remember(tar) {
     if (sign !== '') {
         secondNumber += tar;
         secondNumber = secondNumber.slice(0,10); 
+        input.value = secondNumber;
     } else {
         firstNumber += tar;
         firstNumber = firstNumber.slice(0,10);
+        input.value = firstNumber;
     }
 }
 
@@ -77,10 +83,8 @@ function handler(event) {
     let target = event.target.innerText;
     if (target === 'RESET') {
         reset();
-        update();
     } else if (target === '=') {
         calculate();
-        reset();
     } else if (target === '.') {
         point(target);
     } else if (target === '+' || target === '-' || target === '/' || target === 'x' ) {
