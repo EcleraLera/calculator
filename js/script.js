@@ -1,30 +1,49 @@
 let firstNumber = '';
 let secondNumber = '';
 let sign = '';
-let input = document.getElementById('textview');
+let result = '';
 
-let buttons = document.querySelectorAll('button');
+const input = document.getElementById('textview');
 
-let resultField = document.getElementById('result');
+const buttons = document.querySelectorAll('button');
+
+const resultField = document.getElementById('result');
 
 Array.from(buttons).forEach(button => {
     button.addEventListener("click", handler)
     }
 );
 
-function reset() {
+function deleteAll() {
     firstNumber = '';
     secondNumber = '';
     sign = '';
-    input.value = '0';
 }
 
-function update() {
-    resultField.innerHtml = '';
+function update(tar) {
+    if (tar === 'RESET') {
+        input.value = '0';
+    } else if (tar === 'DEL') {
+        input.value = '0';
+    } else if (tar === '=') {
+        input.value = result;
+    } else if (tar === '.') {
+        if (sign) {
+            input.value = firstNumber.includes('.') ? firstNumber : firstNumber += tar;
+        } else {
+            input.value = secondNumber.includes('.') ? secondNumber : secondNumber += tar;
+        } 
+    } else if (tar !== '+' || tar !== '-' || tar !== '/' || tar !== 'x') {
+        if (sign) {
+            input.value = firstNumber.slice(0,10); 
+        } else {
+            input.value = secondNumber.slice(0,10);
+        }
+    }
+    
 }
 
 function calculate() {
-    let result = '';
     let num1 = parseFloat(firstNumber);
     let num2 = parseFloat(secondNumber);
     if (sign === '-') {
@@ -39,65 +58,62 @@ function calculate() {
     if (sign === '/') {
         result = num1 / num2;
     }
-    input.value = result;
-    input.value = input.value.slice(0,5);
     console.log(result);
 }
 
 function remember(tar) {
-    if (sign !== '') {
-        secondNumber += tar;
-        secondNumber = secondNumber.slice(0,10); 
-        input.value = secondNumber;
-    } else {
+    if (sign) {
         firstNumber += tar;
         firstNumber = firstNumber.slice(0,10);
-        input.value = firstNumber;
-    }
-}
-
-function del() { 
-    if (sign !== '' ) {
-        secondNumber = '';
     } else {
-        firstNumber = '';
-    } 
-}
-
-function operator(tar) {
-    sign += tar;
-    if (sign.length > 1) {
-        sign = sign.slice(0,1);
-    } 
-}
-
-function point(tar) {
-    if (sign !== '') {
-        secondNumber.includes('.') ? secondNumber : secondNumber += tar;
-    } else if (sign == '') {
-        firstNumber.includes('.') ? firstNumber : firstNumber += tar;
+        secondNumber += tar;
+        secondNumber = secondNumber.slice(0,10);
     }
+}
+
+function deleteInput() { 
+    if (sign) {
+        firstNumber = '';
+    } else {
+        secondNumber = '';
+    } 
+}
+
+function addOperator(tar) {
+    sign += tar;
+    sign = sign.slice(0,1);
+    
+}
+
+function addPoint(tar) {
+    if (sign) {
+        firstNumber = firstNumber.includes('.') ? firstNumber : firstNumber += tar;
+    } else {
+        secondNumber = secondNumber.includes('.') ? secondNumber : secondNumber += tar;
+    } 
 }
 
 function handler(event) { 
     let target = event.target.innerText;
     if (target === 'RESET') {
-        reset();
+        deleteAll();
+        update(target);
     } else if (target === '=') {
         calculate();
+        update(target);
     } else if (target === '.') {
-        point(target);
+        addPoint(target);
+        update(target);
     } else if (target === '+' || target === '-' || target === '/' || target === 'x' ) {
         if (firstNumber !== '')  {
-            operator(target);
-        } else { 
-            alert('Введите первое число') 
+            addOperator(target);
         }
-        update();
     } else if (target === 'DEL') { 
-        del();
+        deleteInput();
+        update(target);
     } else { 
-        remember(target); 
+        remember(target);
+        update(target);
     }
 
     console.log(firstNumber);
