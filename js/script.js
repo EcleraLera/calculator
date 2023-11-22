@@ -1,7 +1,6 @@
 let firstNumber = '';
 let secondNumber = '';
 let sign = '';
-let result = '';
 
 const input = document.getElementById('textview');
 
@@ -20,62 +19,55 @@ function deleteAll() {
     sign = '';
 }
 
-function update(tar) {
-    if (tar === 'RESET') {
-        input.value = '0';
-    } else if (tar === 'DEL') {
-        input.value = '0';
-    } else if (tar === '=') {
-        input.value = result;
-    } else if (tar === '.') {
-        if (sign) {
-            input.value = firstNumber.includes('.') ? firstNumber : firstNumber += tar;
-        } else {
-            input.value = secondNumber.includes('.') ? secondNumber : secondNumber += tar;
-        } 
-    } else if (tar !== '+' || tar !== '-' || tar !== '/' || tar !== 'x') {
-        if (sign) {
-            input.value = firstNumber.slice(0,10); 
-        } else {
-            input.value = secondNumber.slice(0,10);
-        }
-    }
+function update(argument) {
+    input.value = argument;
+    input.value = input.value.slice(0,10);
     
 }
 
 function calculate() {
     let num1 = parseFloat(firstNumber);
     let num2 = parseFloat(secondNumber);
+    let result = '';
     if (sign === '-') {
         result = num1 - num2;
+        result = result.toFixed(5)
     }
     if (sign === '+') {
         result = num1 + num2;
+        result = result.toFixed(5)
     }
     if (sign === 'x') {
         result = num1 * num2;
+        result = result.toFixed(5)
     }
     if (sign === '/') {
         result = num1 / num2;
+        result = result.toFixed(5)
     }
-    console.log(result);
+    
+    console.log(result = result.toFixed(5));
+    return result;
+
 }
 
 function remember(tar) {
     if (sign) {
-        firstNumber += tar;
-        firstNumber = firstNumber.slice(0,10);
-    } else {
         secondNumber += tar;
         secondNumber = secondNumber.slice(0,10);
+        return secondNumber;
+    } else {
+        firstNumber += tar;
+        firstNumber = firstNumber.slice(0,10);
+        return firstNumber;
     }
 }
 
 function deleteInput() { 
     if (sign) {
-        firstNumber = '';
-    } else {
         secondNumber = '';
+    } else {
+        firstNumber = '';
     } 
 }
 
@@ -87,35 +79,34 @@ function addOperator(tar) {
 
 function addPoint(tar) {
     if (sign) {
-        firstNumber = firstNumber.includes('.') ? firstNumber : firstNumber += tar;
-    } else {
         secondNumber = secondNumber.includes('.') ? secondNumber : secondNumber += tar;
+        return secondNumber;
+    } else {
+        firstNumber = firstNumber.includes('.') ? firstNumber : firstNumber += tar;
+        return firstNumber;
     } 
 }
 
 function handler(event) { 
     let target = event.target.innerText;
+    let result = '';
     if (target === 'RESET') {
         deleteAll();
-        update(target);
     } else if (target === '=') {
-        calculate();
-        update(target);
+        result = calculate();
     } else if (target === '.') {
-        addPoint(target);
-        update(target);
+        result = addPoint(target);
     } else if (target === '+' || target === '-' || target === '/' || target === 'x' ) {
         if (firstNumber !== '')  {
             addOperator(target);
         }
     } else if (target === 'DEL') { 
         deleteInput();
-        update(target);
     } else { 
-        remember(target);
-        update(target);
+        result = remember(target);
     }
-
+    update(result);
+    
     console.log(firstNumber);
     console.log(sign);
     console.log(secondNumber);
