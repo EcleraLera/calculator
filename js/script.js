@@ -31,22 +31,18 @@ function calculate() {
     let result = '';
     if (sign === '-') {
         result = num1 - num2;
-        result = result.toFixed(5)
     }
     if (sign === '+') {
         result = num1 + num2;
-        result = result.toFixed(5)
     }
     if (sign === 'x') {
         result = num1 * num2;
-        result = result.toFixed(5)
     }
     if (sign === '/') {
         result = num1 / num2;
-        result = result.toFixed(5)
     }
     
-    console.log(result = result.toFixed(5));
+    console.log(result);
     return result;
 
 }
@@ -80,9 +76,13 @@ function addOperator(tar) {
 function addPoint(tar) {
     if (sign) {
         secondNumber = secondNumber.includes('.') ? secondNumber : secondNumber += tar;
+        secondNumber = parseFloat(secondNumber);
+        secondNumber = secondNumber.toFixed(5);
         return secondNumber;
     } else {
         firstNumber = firstNumber.includes('.') ? firstNumber : firstNumber += tar;
+        firstNumber = parseFloat(firstNumber);
+        firstNumber = firstNumber.toFixed(5);
         return firstNumber;
     } 
 }
