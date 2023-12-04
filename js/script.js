@@ -6,8 +6,6 @@ const input = document.getElementById('textview');
 
 const buttons = document.querySelectorAll('button');
 
-const resultField = document.getElementById('result');
-
 Array.from(buttons).forEach(button => {
     button.addEventListener("click", handler)
     }
@@ -42,8 +40,9 @@ function calculate() {
         result = num1 / num2;
     }
     
-    console.log(result);
-    return result;
+    firstNumber = result;
+    console.log(firstNumber);
+    return firstNumber;
 
 }
 
@@ -89,23 +88,24 @@ function addPoint(tar) {
 
 function handler(event) { 
     let target = event.target.innerText;
-    let result = '';
+    let field = '';
     if (target === 'RESET') {
         deleteAll();
     } else if (target === '=') {
-        result = calculate();
+        field = calculate();
     } else if (target === '.') {
-        result = addPoint(target);
+        field = addPoint(target);
     } else if (target === '+' || target === '-' || target === '/' || target === 'x' ) {
         if (firstNumber !== '')  {
             addOperator(target);
-        }
+            field = firstNumber;
+        } 
     } else if (target === 'DEL') { 
         deleteInput();
     } else { 
-        result = remember(target);
+        field = remember(target);
     }
-    update(result);
+    update(field);
     
     console.log(firstNumber);
     console.log(sign);
