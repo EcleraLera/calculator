@@ -41,6 +41,8 @@ function calculate() {
     }
     
     firstNumber = result;
+    secondNumber = '';
+    sign = '';
     console.log(firstNumber);
     return firstNumber;
 
