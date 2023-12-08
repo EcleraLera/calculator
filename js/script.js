@@ -97,7 +97,7 @@ function handler(event) {
         field = calculate();
     } else if (target === '.') {
         field = addPoint(target);
-    } else if (target === '+' || target === '-' || target === '/' || target === 'x' ) {
+    } else if (target.includes('+', 'x', '/', '-')) {
         if (firstNumber !== '')  {
             addOperator(target);
             field = firstNumber;
