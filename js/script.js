@@ -44,7 +44,7 @@ function calculate() {
     secondNumber = '';
     sign = '';
     console.log(firstNumber);
-    return firstNumber;
+    return firstNumber.toFixed(10);git
 
 }
 
@@ -77,19 +77,16 @@ function addOperator(tar) {
 function addPoint(tar) {
     if (sign) {
         secondNumber = secondNumber.includes('.') ? secondNumber : secondNumber += tar;
-        secondNumber = parseFloat(secondNumber);
-        secondNumber = secondNumber.toFixed(5);
         return secondNumber;
     } else {
         firstNumber = firstNumber.includes('.') ? firstNumber : firstNumber += tar;
-        firstNumber = parseFloat(firstNumber);
-        firstNumber = firstNumber.toFixed(5);
         return firstNumber;
     } 
 }
 
 function handler(event) { 
     let target = event.target.innerText;
+    const operator = '+-/x' ;
     let field = '';
     if (target === 'RESET') {
         deleteAll();
@@ -97,7 +94,7 @@ function handler(event) {
         field = calculate();
     } else if (target === '.') {
         field = addPoint(target);
-    } else if (target.includes('+', 'x', '/', '-')) {
+    } else if (operator.includes(target)) {
         if (firstNumber !== '')  {
             addOperator(target);
             field = firstNumber;
