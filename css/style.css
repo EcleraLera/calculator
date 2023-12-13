@@ -92,6 +92,7 @@ input[type="text"] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
     margin-top: 50px;
     margin-bottom: 45px;
 }
@@ -102,10 +103,19 @@ input[type="text"] {
     color: var(--header-text-colour);
 }
 
+.radio-button {
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
 .header__theme {
+    width: 410px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .switch {
