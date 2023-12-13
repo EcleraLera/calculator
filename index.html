@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-theme">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,46 +25,47 @@
                     <div class="switch">
                         <div class = "switch__number">1&nbsp 2 &nbsp3</div>
                         <div class="radio-button">
-                            <input type="radio" name="theme" id="theme1" checked><label for="theme1"></label>
-                            <input type="radio" name="theme" id="theme2"><label for="theme2"></label>
-                            <input type="radio" name="theme" id="theme3"><label for="theme3"></label>
+                            <input class="theme dark-theme" type="radio" name="theme" id="theme1" checked><label for="theme1"></label>
+                            <input class="theme light-theme" type="radio" name="theme" id="theme2"><label for="theme2"></label>
+                            <input class="theme pink-theme" type="radio" name="theme" id="theme3"><label for="theme3"></label>
                         </div>
                     </div>
                 </div>    
             </div>
             <!-- поле результата -->
-            <div class="calculator__result result">
+            <div class="calculator__result result item" id="result">
                 <input type="text" name="textview" id="textview" value="0">
             </div> 
+            <div id="archiv"></div>
             <!-- копки -->
             <div class="calculator__buttons buttons">
                 <div class="buttons__row">
-                    <button class="button button_white button_short" id="">7</button>
-                    <button class="button button_white button_short" id="">8</button>
-                    <button class="button button_white button_short" id="">9</button>
-                    <button class="button button_blue button_short" id="">DEL</button>
+                    <button class="button button_white button_short">7</button>
+                    <button class="button button_white button_short">8</button>
+                    <button class="button button_white button_short">9</button>
+                    <button class="button button_blue button_short">DEL</button>
                 </div>
                 <div class="buttons__row">
-                    <button class="button button_white button_short" id="">4</button>
-                    <button class="button button_white button_short" id="">5</button>
-                    <button class="button button_white button_short" id="">6</button>
-                    <button class="button button_white button_short" id="plus">+</button>
+                    <button class="button button_white button_short">4</button>
+                    <button class="button button_white button_short">5</button>
+                    <button class="button button_white button_short">6</button>
+                    <button class="button button_white button_short">+</button>
                 </div>
                 <div class="buttons__row">
-                    <button class="button button_white button_short" id="">1</button>
-                    <button class="button button_white button_short" id="">2</button>
-                    <button class="button button_white button_short" id="">3</button>
-                    <button class="button button_white button_short" id="minus">-</button>
+                    <button class="button button_white button_short">1</button>
+                    <button class="button button_white button_short">2</button>
+                    <button class="button button_white button_short">3</button>
+                    <button class="button button_white button_short">-</button>
                 </div>
                 <div class="buttons__row">
-                    <button class="button button_white button_short" id="">.</button>
-                    <button class="button button_white button_short" id="">0</button>
-                    <button class="button button_white button_short" id="devide">/</button>
-                    <button class="button button_white button_short" id="times">x</button>
+                    <button class="button button_white button_short">.</button>
+                    <button class="button button_white button_short">0</button>
+                    <button class="button button_white button_short">/</button>
+                    <button class="button button_white button_short">x</button>
                 </div>
                 <div class="buttons__row">
-                    <button class="button button_blue button_long" id="">RESET</button>
-                    <button class="button button_red button_long" id="">=</button>
+                    <button class="button button_blue button_long" id="reset">RESET</button>
+                    <button class="button button_red button_long" id="button_red">=</button>
                 </div>
             </div> 
         </div>

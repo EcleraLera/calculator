@@ -7,13 +7,14 @@ const input = document.getElementById('textview');
 const buttons = document.querySelectorAll('button');
 
 const themes = document.getElementsByClassName('theme');
+console.log(themes);
 
 Array.from(buttons).forEach(button => {
     button.addEventListener("click", handler)
     }
 );
 
-themes.forEach(input => {
+Array.from(themes).forEach(input => {
     input.addEventListener("click", switchTheme)
     }
 );
@@ -23,26 +24,21 @@ function initialState(themeName) {
     document.documentElement.className = themeName;
 }
 
-function switchTheme() {
-    if (themes.id == 'theme1') {
+function switchTheme(event) {
+    let target = event.target.id;
+    if (target == 'theme1') {
         if (localStorage.getItem('theme') == 'light-theme' || localStorage.getItem('theme') =='pink-theme' ) {
             initialState('dark-theme');
-        } else {
-            initialState('dark-theme')
         }
     }
-    if (themes.id == 'theme2') {
+    if (target == 'theme2') {
         if (localStorage.getItem('theme') == 'dark-theme' || localStorage.getItem('theme') == 'pink-theme' ) {
             initialState('light-theme');
-        } else {
-            initialState('light-theme')
         }
     }
-    if (themes.id == 'theme3') {
+    if (target == 'theme3') {
         if (localStorage.getItem('theme') == 'dark-theme' || localStorage.getItem('theme') == 'light-theme' ) {
             initialState('pink-theme');
-        } else {
-            initialState('pink-theme')
         }
     }
 }
@@ -77,8 +73,10 @@ function calculate() {
     }
     
     firstNumber = result;
+    secondNumber = '';
+    sign = '';
     console.log(firstNumber);
-    return firstNumber;
+    return firstNumber.toFixed(10);
 
 }
 
@@ -111,19 +109,16 @@ function addOperator(tar) {
 function addPoint(tar) {
     if (sign) {
         secondNumber = secondNumber.includes('.') ? secondNumber : secondNumber += tar;
-        secondNumber = parseFloat(secondNumber);
-        secondNumber = secondNumber.toFixed(5);
         return secondNumber;
     } else {
         firstNumber = firstNumber.includes('.') ? firstNumber : firstNumber += tar;
-        firstNumber = parseFloat(firstNumber);
-        firstNumber = firstNumber.toFixed(5);
         return firstNumber;
     } 
 }
 
 function handler(event) { 
     let target = event.target.innerText;
+    const operator = '+-/x';
     let field = '';
     if (target === 'RESET') {
         deleteAll();
@@ -131,7 +126,7 @@ function handler(event) {
         field = calculate();
     } else if (target === '.') {
         field = addPoint(target);
-    } else if (target === '+' || target === '-' || target === '/' || target === 'x' ) {
+    } else if (operator.includes(target)) {
         if (firstNumber !== '')  {
             addOperator(target);
             field = firstNumber;
