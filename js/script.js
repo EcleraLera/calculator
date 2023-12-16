@@ -7,7 +7,6 @@ const input = document.getElementById('textview');
 const buttons = document.querySelectorAll('button');
 
 const themes = document.getElementsByClassName('theme');
-console.log(themes);
 
 Array.from(buttons).forEach(button => {
     button.addEventListener("click", handler)

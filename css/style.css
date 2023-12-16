@@ -68,33 +68,7 @@ body {
     align-items: center;
     justify-content: center;
     row-gap: 15px;
-}
-
-form {
-    max-width: 100%;
-}
-
-input[type="text"] {
-    width: 480px;
-    height: 114px;
-    border: none;
-    font-size: 55px;
-    outline: none;
-    text-align: right;
-    padding-right: 15px;
-    background-color: var(--rezult-colour);
-    border-radius: 8px;
-    color: var(--rezult-text-colour);
-    font-family: 'League Spartan', sans-serif;
-}
-
-.calculator__header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 45px;
+    margin: 0 0 85px 16px;
 }
 
 .header {
@@ -103,29 +77,40 @@ input[type="text"] {
     color: var(--header-text-colour);
 }
 
-.radio-button {
-    
+.calculator__header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    margin: 50px 0px 25px 0px;
+    margin-top: 98px;
 }
-.header__theme {
-    width: 410px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
+
+h1 {
+    padding-left: 6px;
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'League Spartan', sans-serif;
+}
+
+h2 {
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'League Spartan', sans-serif;
+    margin-left: 58%;
 }
 
 .switch {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: relative;
 }
 
-.switch__number {
-    font-size: 10px;
+.number {
+    font-size: 14px;
+    width: 100%;
+    word-spacing: 10px;
     font-weight: 700;
     font-family: 'League Spartan', sans-serif;
 }
@@ -134,11 +119,17 @@ input[type="text"] {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    font-size: 14px;
+    position: absolute;
+    top: -80%;
+    left: 51.5%;
+    transform: translateX(-50%);
 }
 
-.radio-button {
+.switch__radio-button {
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 label[for="theme1"]:nth-of-type(1) {
@@ -178,53 +169,52 @@ input[type="radio"] + label {
 input[type="radio"]:checked + label:before {
     content: '';
     position: absolute;
-    left: 0;
+    top: 50%;
+    left: 50%; 
+    transform: translateX(-50%) translateY(-50%);
     width: 14px;
     height: 14px;
     border-radius: 50%;
     background: var(--input-colour);
 }
 
-h1 {
-    padding-left: 6px;
-    font-size: 28px;
-    font-weight: 800;
-    font-family: 'League Spartan', sans-serif;
-}
-
-h2 {
-    font-size: 12px;
-    margin-right: 10px;
-    font-weight: 700;
-    font-family: 'League Spartan', sans-serif;
-}
-
 .result {
-    display: flex;
-    flex-direction: row;
     margin-bottom: 21px;
-    padding: 0;
 }
 
-.calculator__result {
+/* .calculator__result {
     background-color: var(--rezult-colour);
+    color: var(--rezult-text-colour);
     height: 114px;
     width: 100%;
     border-radius: 8px;
+} */
+
+input[type="text"] {
+    width: 480px;
+    height: 114px;
+    border: none;
+    font-size: 55px;
+    outline: none;
+    text-align: right;
+    padding-right: 25px;
+    background-color: var(--rezult-colour);
+    border-radius: 8px;
     color: var(--rezult-text-colour);
+    font-family: 'League Spartan', sans-serif;
 }
 
 .buttons {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-evenly;
-}
-
-.calculator__buttons {
     background-color: var(--buttons-colour);
     height: 427px;
     width: 100%;
-    border-radius: 9px;
+    border-radius: 9px; 
+}
+
+.calculator__buttons {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
 }
 
 .buttons__row {
