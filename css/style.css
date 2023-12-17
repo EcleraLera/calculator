@@ -132,7 +132,7 @@ h2 {
     align-items: center;
 }
 
-label[for="theme1"]:nth-of-type(1) {
+label[for="dark-theme"]:nth-of-type(1) {
     background-color: var(--label-colour);
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
@@ -140,13 +140,13 @@ label[for="theme1"]:nth-of-type(1) {
     height: 23px;
 }
 
-label[for="theme2"]:nth-of-type(2) {
+label[for="light-theme"]:nth-of-type(2) {
     background-color: var(--label-colour);
     width: 21px;
     height: 23px;
 }
 
-label[for="theme3"]:nth-of-type(3) {
+label[for="pink-theme"]:nth-of-type(3) {
     background-color: var(--label-colour);
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;

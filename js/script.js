@@ -18,28 +18,14 @@ Array.from(themes).forEach(input => {
     }
 );
 
-function initialState(themeName) {
+function setTheme(themeName) {
     localStorage.setItem('theme', themeName);
     document.documentElement.className = themeName;
 }
 
 function switchTheme(event) {
     let target = event.target.id;
-    if (target == 'theme1') {
-        if (localStorage.getItem('theme') == 'light-theme' || localStorage.getItem('theme') =='pink-theme' ) {
-            initialState('dark-theme');
-        }
-    }
-    if (target == 'theme2') {
-        if (localStorage.getItem('theme') == 'dark-theme' || localStorage.getItem('theme') == 'pink-theme' ) {
-            initialState('light-theme');
-        }
-    }
-    if (target == 'theme3') {
-        if (localStorage.getItem('theme') == 'dark-theme' || localStorage.getItem('theme') == 'light-theme' ) {
-            initialState('pink-theme');
-        }
-    }
+    setTheme(target);
 }
 
 function deleteAll() {
